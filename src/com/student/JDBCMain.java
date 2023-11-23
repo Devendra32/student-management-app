@@ -10,14 +10,13 @@ import java.io.InputStreamReader;
 
 public class JDBCMain {
     public static void main(String[] args) throws IOException {
-        boolean flag = true;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Student st = new Student();
         StudentService ss = new StudentServiceImpl();
         System.out.println("*****************************************************");
         System.out.println("<<<<<<<<< WELCOME TO STUDENT MANAGEMENT APP >>>>>>>>>");
         System.out.println("*****************************************************");
-        while (flag) {
+        while (true) {
             System.out.println("\n---------------------------------------------------");
             System.out.println("PRESS 1 to Add Student");
             System.out.println("PRESS 2 to Display All Students");
@@ -55,23 +54,23 @@ public class JDBCMain {
                     System.out.println("Enter student id :");
                     ss.updateStudent(Long.parseLong(br.readLine()));
                 }
-                    break;
+                break;
                 //delete student
-                case 5:{
+                case 5: {
                     System.out.println("Enter student id :");
                     ss.deleteStudent(Long.parseLong(br.readLine()));
                 }
-                    break;
+                break;
                 //exit
                 case 6:
-                    flag = false;
-                    break;
+                    System.out.println("***********************************************");
+                    System.out.println("----------Thank You For Using Our App----------");
+                    System.out.println("***********************************************");
+                    System.exit(0);
                 default:
                     System.out.println("Please enter correct input...");
             }
         }
-        System.out.println("***********************************************");
-        System.out.println("----------Thank You For Using Our App----------");
-        System.out.println("***********************************************");
+
     }
 }

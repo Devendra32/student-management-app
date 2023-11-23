@@ -1,13 +1,12 @@
 package com.student.conn;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class JDBCCon {
     static Connection con;
 
-    public static Connection craeteCon(){
+    public static Connection craeteCon() {
         try {
             //load the driver
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -19,8 +18,7 @@ public class JDBCCon {
             con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 //            System.out.println("Connection Created...");
 
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
